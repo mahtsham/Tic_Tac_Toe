@@ -6,11 +6,14 @@ puts 'enter payer two name : '
 player_two = gets.chomp
 puts "#{player_one} will play with X and #{player_two} will play 0"
 puts "let's start . . ."
-
-puts '+---+---+---+'
-puts '| 1 | 2 | 3 |'
-puts '+---+---+---+'
-puts '| 4 | 5 | 6 |'
-puts '+---+---+---+'
-puts '| 7 | 8 | 9 |'
-puts '+---+---+---+'
+def display_board(board)
+  puts '+---+---+---+'
+  puts "| #{board[0]} | #{board[1]} | #{board[2]} |"
+  puts '+---+---+---+'
+  puts "| #{board[3]} | #{board[4]} | #{board[5]} |"
+  puts '+---+---+---+'
+  puts "| #{board[6]} | #{board[7]} | #{board[8]} |"
+  puts '+---+---+---+'
+end
+board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+display_board(board)
