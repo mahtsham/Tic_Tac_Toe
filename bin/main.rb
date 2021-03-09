@@ -34,6 +34,9 @@ class Board
   def update(number, symbol)
     @board[number - 1] = symbol
   end
+  def valid_move(number)
+    @board[number - 1]=number
+  end 
 
   def move
     count = @board.length
