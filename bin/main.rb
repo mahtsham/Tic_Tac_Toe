@@ -1,13 +1,14 @@
 #!/usr/bin/env ruby
 class Board
   attr_accessor :board
+  
   def intro
     puts 'Welcome to Tic Tac Toe game'
     puts 'enter payer one name : '
-    player_one = gets.chomp
+    @player_one = gets.chomp
     puts 'enter payer two name : '
-    player_two = gets.chomp
-    puts "#{player_one} will play with X and #{player_two} will play 0"
+    @player_two = gets.chomp
+    puts "#{@player_one} will play with X and #{@player_two} will play 0"
     puts "let's start . . ."
   end
 
@@ -20,47 +21,51 @@ class Board
     puts "| #{@board[6]} | #{@board[7]} | #{@board[8]} |"
     puts '+---+---+---+'
   end
-  WINNING_COMBOS = [
+  WIN_COMBINATION = [
     [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6],
     [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]
     ].freeze
     
   def initialize
     @board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    @player_one = nil
+    @player_two = nil
+    @player_one_symbol = 'X'
+    @player_two_symbol = 'O'
   end
-  player_one_symbol = 'X'
-  player_two_symbol = 'O'
+ 
                                   
   def update(number, symbol)
     @board[number - 1] = symbol
   end
   def valid_move(number)
-    @board[number - 1]=number
+    @board[number - 1]=number 
   end 
   def winner?
-    WINNING_COMBOS.any? do |combo|
+    WIN_COMBINATION.any? do |combo|
       [@board[combo[0]], @board[combo[1]], @board[combo[2]]].uniq.length == 1
     end
   end 
   def move
-    count = @board.length
-    until @board.all? { |x| %w[X O].include?(x) }
+    count = 0 
+    
         
-      while count < 0
-        if @board.lenght.even?
-          puts "It's +  #{player_one}  + turn"
+    until @board.all? { |x| %w[X O].include?(x) }
+        if count.even?
+          puts "It's #{@player_one} turn"
           puts 'Please Select an available cell from board '
           player_turn = gets.chomp.to_i
-          count - 1
+          update(player_turn,@player_one_symbol) if valid_move(player_turn)
+          count + 1
         else
-          puts "It's + #{player_two} + turn"
+          puts "It's + #{@player_two} + turn"
           puts 'Please Select an available cell from board '
           player_turn = gets.chomp.to_i
-          count - 1
+          @board.update(player_turn,@player_two_symbol) && @board.size - 1 if valid_move(player_turn)
+          count + 1
         end
       end
-    end
-  end
+   end
 
   def full?
     @board.all? { |x| %w[X O].include?(x) }
