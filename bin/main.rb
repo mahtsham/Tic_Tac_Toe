@@ -37,7 +37,11 @@ class Board
   def valid_move(number)
     @board[number - 1]=number
   end 
-
+  def winner?
+    WINNING_COMBOS.any? do |combo|
+      [@board[combo[0]], @board[combo[1]], @board[combo[2]]].uniq.length == 1
+    end
+  end 
   def move
     count = @board.length
     until @board.all? { |x| %w[X O].include?(x) }
