@@ -45,7 +45,19 @@ class Board
     end
   end
 
+  def move
+    until game.full?
+      user_input(current_player)
+      game.display_board
+      break if game.winner?
 
+      @current_player = if current_player == @player1
+                          @player2
+                        else
+                          @player1
+                        end
+
+    end
     if game.winner?
       puts "#{current_player[1]} wins"
     else
