@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# rubocop:disable Lint/AssignmentInCondition
 require_relative '../lib/board'
 
 class Board
@@ -76,5 +77,6 @@ class Board
     move
   end
 end
+# rubocop:enable Lint/AssignmentInCondition
 game = Board.new
 game.play
