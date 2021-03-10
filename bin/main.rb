@@ -50,6 +50,7 @@ class Board
     until game.full?
       user_input(current_player)
       game.display_board
+      break if game.winner?
 
       @current_player = if current_player == @player1
                           @player2
@@ -57,6 +58,11 @@ class Board
                           @player1
                         end
 
+    end
+    if game.winner?
+      puts "#{current_player[1]} wins"
+    else
+      puts 'Its A draw'
     end
   end
 
