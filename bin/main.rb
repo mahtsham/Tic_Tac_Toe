@@ -74,4 +74,3 @@ end
 # rubocop:enable Lint/AssignmentInCondition
 game = Board.new
 game.play
-
