@@ -40,7 +40,6 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  rspec (~> 3.9)
   rubocop
 
 RUBY VERSION
