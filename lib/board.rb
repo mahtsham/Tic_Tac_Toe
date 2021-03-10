@@ -27,12 +27,6 @@ class Game
     @board[number - 1] == number
   end
 
-  def winner?
-    WIN_COMBINATION.any? do |combo|
-      [@board[combo[0]], @board[combo[1]], @board[combo[2]]].uniq.length == 1
-    end
-  end
-
   def full?
     @board.all? { |x| %w[X O].include?(x) }
   end
