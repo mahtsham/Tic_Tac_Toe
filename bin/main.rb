@@ -25,6 +25,10 @@ class Board
     while @player_two == "" || @player_two == " " || @player_two == nil
       secondplayer
     end
+    until @player_two != @player_one
+      puts 'This name is taken by player one '
+      secondplayer
+    end
     puts "#{@player_one} will play with X and #{@player_two} will play 0"
     puts "let's start . . ."
   end
