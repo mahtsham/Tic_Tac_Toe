@@ -3,13 +3,13 @@
 # rubocop:disable Metrics/CyclomaticComplexity
 require_relative '../lib/board'
 
-class Board
+class Game
   attr_accessor :board, :current_player, :player1, :player2, :game
 
   def initialize
     @player_one = nil
     @player_two = nil
-    @game = Game.new
+    @game = Board.new
   end
 
   def intro
@@ -98,5 +98,5 @@ class Board
 end
 # rubocop:enable Lint/AssignmentInCondition
 # rubocop:enable Metrics/CyclomaticComplexity
-game = Board.new
+game = Game.new
 game.play

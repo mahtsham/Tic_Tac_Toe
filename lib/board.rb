@@ -1,4 +1,4 @@
-class Game
+class Board
   attr_accessor :board
 
   def display_board
