@@ -13,12 +13,28 @@ class Board
 
   def intro
     puts 'Welcome to Tic Tac Toe game'
-    puts 'enter payer one name : '
+
+      puts 'enter player one name : '
     @player_one = gets.chomp
-    puts 'enter payer two name : '
+    while @player_one == "" || @player_one == " " || @player_one == nil
+      firstplayer
+    end
+
+    puts 'enter player two name : '
     @player_two = gets.chomp
+    while @player_two == "" || @player_two == " " || @player_two == nil
+      secondplayer
+    end
     puts "#{@player_one} will play with X and #{@player_two} will play 0"
     puts "let's start . . ."
+  end
+  def firstplayer     
+    puts 'enter player one name : '
+    @player_one = gets.chomp
+  end
+  def secondplayer     
+    puts 'enter payer two name : '
+    @player_two = gets.chomp
   end
 
   def setup
