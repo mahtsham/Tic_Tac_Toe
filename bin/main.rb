@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 # rubocop:disable Lint/AssignmentInCondition
+# rubocop:disable Metrics/CyclomaticComplexity
 require_relative '../lib/board'
 
 class Board
@@ -14,17 +15,13 @@ class Board
   def intro
     puts 'Welcome to Tic Tac Toe game'
 
-      puts 'enter player one name : '
+    puts 'enter player one name : '
     @player_one = gets.chomp
-    while @player_one == "" || @player_one == " " || @player_one == nil
-      firstplayer
-    end
+    firstplayer while @player_one == '' || @player_one == ' ' || @player_one.nil?
 
     puts 'enter player two name : '
     @player_two = gets.chomp
-    while @player_two == "" || @player_two == " " || @player_two == nil
-      secondplayer
-    end
+    secondplayer while @player_two == '' || @player_two == ' ' || @player_two.nil?
     until @player_two != @player_one
       puts 'This name is taken by player one '
       secondplayer
@@ -32,11 +29,13 @@ class Board
     puts "#{@player_one} will play with X and #{@player_two} will play 0"
     puts "let's start . . ."
   end
-  def firstplayer     
+
+  def firstplayer
     puts 'enter player one name : '
     @player_one = gets.chomp
   end
-  def secondplayer     
+
+  def secondplayer
     puts 'enter payer two name : '
     @player_two = gets.chomp
   end
@@ -98,5 +97,6 @@ class Board
   end
 end
 # rubocop:enable Lint/AssignmentInCondition
+# rubocop:enable Metrics/CyclomaticComplexity
 game = Board.new
 game.play
