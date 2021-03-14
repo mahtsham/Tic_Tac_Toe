@@ -9,7 +9,18 @@ class Game
   def initialize
     @player_one = nil
     @player_two = nil
+    @board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     @game = Board.new
+  end
+
+  def display_board
+    puts '+---+---+---+'
+    puts "| #{@board[0]} | #{@board[1]} | #{@board[2]} |"
+    puts '+---+---+---+'
+    puts "| #{@board[3]} | #{@board[4]} | #{@board[5]} |"
+    puts '+---+---+---+'
+    puts "| #{@board[6]} | #{@board[7]} | #{@board[8]} |"
+    puts '+---+---+---+'
   end
 
   def intro
@@ -68,7 +79,7 @@ class Game
   def move
     until game.full?
       user_input(current_player)
-      game.display_board
+      display_board
       break if game.winner?
 
       @current_player = if current_player == @player1
@@ -92,7 +103,7 @@ class Game
   def play
     intro
     setup
-    game.display_board
+    display_board
     move
   end
 end
