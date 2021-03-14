@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-# rubocop:disable Lint/AssignmentInCondition
 # rubocop:disable Metrics/CyclomaticComplexity
 require_relative '../lib/board'
 
@@ -99,7 +98,6 @@ class Game
     move
   end
 end
-# rubocop:enable Lint/AssignmentInCondition
 # rubocop:enable Metrics/CyclomaticComplexity
 game = Game.new
 game.play
