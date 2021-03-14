@@ -57,14 +57,6 @@ class Game
     @current_player = @player1
   end
 
-  def switch
-    @current_player = if @current_player = @player1
-                        @player2
-                      else
-                        @player1
-                      end
-  end
-
   def user_input(current_player)
     puts "#{current_player[1]} please choose a number"
     input = gets.chomp.to_i
