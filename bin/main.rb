@@ -2,7 +2,7 @@
 # rubocop:disable Metrics/CyclomaticComplexity
 require_relative '../lib/board'
 
-class Game
+  
   attr_accessor :board, :current_player, :player1, :player2, :game
 
   def initialize
@@ -97,7 +97,6 @@ class Game
     display_board
     move
   end
-end
+
 # rubocop:enable Metrics/CyclomaticComplexity
-game = Game.new
-game.play
+play
