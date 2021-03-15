@@ -3,7 +3,6 @@
 require_relative '../lib/board'
 
 class Game
-  
   attr_accessor :board, :current_player, :player1, :player2, :game
 
   def initialize
