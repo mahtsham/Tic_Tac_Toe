@@ -51,16 +51,6 @@ class Game
     @player_two = gets.chomp
   end
 
-  def display_board
-    puts '+---+---+---+'
-    puts "| #{@board[0]} | #{@board[1]} | #{@board[2]} |"
-    puts '+---+---+---+'
-    puts "| #{@board[3]} | #{@board[4]} | #{@board[5]} |"
-    puts '+---+---+---+'
-    puts "| #{@board[6]} | #{@board[7]} | #{@board[8]} |"
-    puts '+---+---+---+'
-  end
-
   def update(number, symbol)
     @board[number - 1] = symbol
   end
