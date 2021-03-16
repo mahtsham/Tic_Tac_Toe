@@ -67,8 +67,8 @@ Ahtsham please choose a number . . .
 👤 **Author**
 
 - GitHub: [@mahtsham](https://github.com/mahtsham)
-- Twitter: [@mahtsham](https://twitter.com/mahtsham)
-- LinkedIn: [mahtsham](https://linkedin.com/mahtsham)
+- Twitter: [@Muhamma60639448](https://twitter.com/Muhamma60639448)
+- LinkedIn: [muhammad-ahtsham](https://linkedin.com/in/muhammad-ahtsham)
 
 ## 🤝 Contributing
 
