@@ -1,0 +1,35 @@
+class Board
+  def initialize
+    @board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  end
+  WIN_COMBINATION = [
+    [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6],
+    [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]
+  ].freeze
+
+  def update(number, symbol)
+    @board[number - 1] = symbol
+  end
+
+  def valid_move(number)
+    @board[number - 1] == number
+  end
+
+  def switch
+    @current_player = if @current_player == @player1
+                        @player2
+                      else
+                        @player1
+                      end
+  end
+
+  def winner?
+    WIN_COMBINATION.any? do |combo|
+      [@board[combo[0]], @board[combo[1]], @board[combo[2]]].uniq.length == 1
+    end
+  end
+
+  def full?
+    @board.all? { |x| %w[X O].include?(x) }
+  end
+end
