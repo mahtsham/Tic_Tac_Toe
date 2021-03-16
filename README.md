@@ -21,8 +21,8 @@ This is a tic tac toe game
 - Turns will take places one after another till it reaches either winning or draw condition
 
 ### Winning conditions
-- To have occupied a full row with with all chosen by same player
-- To have occupied a column with with all chosen by same player
+- vertical full by same player
+- horizontal full by same player
 - To have occupied a full diagonal with all chosen by same player
 
 ## Cloning and installation
