@@ -51,10 +51,6 @@ class Game
     @player_two = gets.chomp
   end
 
-  def update(number, symbol)
-    @board[number - 1] = symbol
-  end
-
   def setup
     @player1 = ['X', @player_one]
     @player2 = ['O', @player_two]
@@ -64,34 +60,19 @@ class Game
   def user_input(current_player)
     puts "#{current_player[1]} please choose a number"
     input = gets.chomp.to_i
-    if valid_move(input)
-      update(input, current_player[0])
+    if game.valid_move(input)
+      game.update(input, current_player[0])
     else
       puts 'Please choose a valid number'
       user_input(current_player)
     end
   end
 
-  def valid_move(number)
-    @board[number - 1] == number
-  end
-
-  def winner?
-    WIN_COMBINATION.any? do |combo|
-      [@board[combo[0]], @board[combo[1]], @board[combo[2]]].uniq.length == 1
-    end
-  end
-
-  WIN_COMBINATION = [
-    [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6],
-    [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]
-  ].freeze
-
   def move
     until game.full?
       user_input(current_player)
       display_board
-      break if winner?
+      break if game.winner?
 
       @current_player = if current_player == @player1
                           @player2
@@ -100,7 +81,7 @@ class Game
                         end
 
     end
-    if winner?
+    if game.winner?
       puts "#{current_player[1]} wins"
     else
       puts 'Its A draw'
