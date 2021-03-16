@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 # rubocop:disable Metrics/CyclomaticComplexity
+
 require_relative '../lib/board'
 
 class Game

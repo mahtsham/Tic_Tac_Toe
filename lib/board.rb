@@ -26,7 +26,7 @@ class Board
   end
 
   def switch
-    @current_player = if @current_player = @player1
+    @current_player = if @current_player == @player1
                         @player2
                       else
                         @player1
