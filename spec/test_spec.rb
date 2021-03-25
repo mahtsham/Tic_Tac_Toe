@@ -1,7 +1,6 @@
 require_relative '../lib/board'
 
 describe Board do
-  
   let(:board) { Board.new }
   describe 'update' do
     it 'update the move' do
@@ -15,8 +14,8 @@ describe Board do
   end
   describe 'update' do
     it 'update the move' do
-        expect(board.update(1, 'O')).to eql('O')
-        expect(board.update(1, false)).to eql(false)
+      expect(board.update(1, 'O')).to eql('O')
+      expect(board.update(1, false)).to eql(false)
     end
   end
   describe 'update' do
@@ -30,13 +29,10 @@ describe Board do
     end
   end
   describe 'switch' do
-  it 'swtiches players' do
-    first_player = 'a'
-    second_player = 'b'
-    current_player = first_player
-    expect(board.switch).to_not eql(second_player)
+    it 'swtiches players' do
+      expect(board.switch).to_not eql(second_player)
+    end
   end
-end
 
   describe 'valid_move' do
     it 'checks the valid move' do
