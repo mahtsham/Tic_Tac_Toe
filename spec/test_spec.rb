@@ -24,5 +24,11 @@ describe 'valid_move' do
         expect(game.valid_move(10)).to eql(false)
     end
 end 
+describe 'full?' do
+    
+    it 'checks if board is full' do
+        expect(board.full?).to eql(false)
+    end
+end 
 
 end
