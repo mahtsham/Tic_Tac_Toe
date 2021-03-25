@@ -30,7 +30,10 @@ describe Board do
   end
   describe 'switch' do
     it 'swtiches players' do
-      expect(board.switch).to_not eql(second_player)
+        player1 = 'a'
+        player2 = 'b'
+        current_player = player1
+        expect(board.switch).to_not eql(player2)
     end
   end
 
