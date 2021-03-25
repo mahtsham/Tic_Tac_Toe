@@ -30,5 +30,11 @@ describe 'full?' do
         expect(board.full?).to eql(false)
     end
 end 
+describe 'switch' do
+    
+    it 'checks if board is full' do
+        expect(board.switch).to eql(nil)
+    end
+end 
 
 end
