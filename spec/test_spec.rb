@@ -1,8 +1,7 @@
 require_relative '../lib/board'
-require_relative '../bin/main'
 
-describe Game do
-  let(:game) { Game.new }
+describe Board do
+  
   let(:board) { Board.new }
   describe 'update' do
     it 'update the move' do
@@ -16,13 +15,13 @@ describe Game do
   end
   describe 'winner?' do
     it 'checks the winner' do
-      expect(game.winner?).to eql(false)
+      expect(board.winner?).to eql(false)
     end
   end
 
   describe 'valid_move' do
     it 'checks the valid move' do
-      expect(game.valid_move(10)).to eql(false)
+      expect(board.valid_move(10)).to eql(false)
     end
   end
   describe 'full?' do
@@ -33,11 +32,6 @@ describe Game do
   describe 'switch' do
     it 'checks if board is full' do
       expect(board.switch).to eql(nil)
-    end
-  end
-  describe 'intro' do
-    it 'it shows the introduction' do
-      expect(game.intro).to eql(puts("Welcome to Tic Tac Toe game \n\n"))
     end
   end
 end
