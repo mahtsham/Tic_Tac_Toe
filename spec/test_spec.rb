@@ -13,9 +13,9 @@ describe Board do
     end
   end
   describe 'update' do
-    it 'update the move' do
+    it 'not update if already taken' do
       expect(board.update(1, 'O')).to eql('O')
-      expect(board.update(1, false)).to eql(false)
+      expect(board.update(1, false)).to_not eql(true)
     end
   end
   describe 'update' do
@@ -30,10 +30,10 @@ describe Board do
   end
   describe 'switch' do
     it 'swtiches players' do
-        player1 = 'a'
-        player2 = 'b'
-        current_player = player1
-        expect(board.switch).to_not eql(player2)
+      player1 = 'a'
+      player2 = 'b'
+      current_player = player1
+      expect(board.switch).to_not eql(player2)
     end
   end
 
