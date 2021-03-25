@@ -36,5 +36,9 @@ describe 'switch' do
         expect(board.switch).to eql(nil)
     end
 end 
-
+describe 'intro' do
+  it 'it shows the introduction' do
+    expect(game.intro).to eql(puts("Welcome to Tic Tac Toe game \n\n"))
+  end
+end
 end
