@@ -13,6 +13,17 @@ describe Board do
       expect(board.update(1, 'O')).to eql('O')
     end
   end
+  describe 'update' do
+    it 'update the move' do
+        expect(board.update(1, 'O')).to eql('O')
+        expect(board.update(1, false)).to eql(false)
+    end
+  end
+  describe 'update' do
+    it 'update the move' do
+      expect(board.update(2, false)).to eql(false)
+    end
+  end
   describe 'winner?' do
     it 'checks the winner' do
       expect(board.winner?).to eql(false)
