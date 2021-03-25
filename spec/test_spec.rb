@@ -18,5 +18,11 @@ describe 'winner?' do
     end
 end 
 
+describe 'valid_move' do
+    
+    it 'checks the valid move' do
+        expect(game.valid_move(10)).to eql(false)
+    end
+end 
 
 end
