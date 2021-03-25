@@ -8,7 +8,7 @@ describe Board do
     end
   end
   describe 'update' do
-    it 'update the move' do
+    it 'update the move of player2' do
       expect(board.update(1, 'O')).to eql('O')
     end
   end
