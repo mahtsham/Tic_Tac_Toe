@@ -11,5 +11,12 @@ describe Game do
         expect(board.update(2, 'X')).to eql('X')
     end
 end
+describe 'winner?' do
+    
+    it 'checks the winner' do
+        expect(game.winner?).to eql(false)
+    end
+end 
+
 
 end
