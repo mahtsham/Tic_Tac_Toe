@@ -29,6 +29,14 @@ describe Board do
       expect(board.winner?).to eql(false)
     end
   end
+  describe 'switch' do
+  it 'swtiches players' do
+    first_player = 'a'
+    second_player = 'b'
+    current_player = first_player
+    expect(board.switch).to_not eql(second_player)
+  end
+end
 
   describe 'valid_move' do
     it 'checks the valid move' do
