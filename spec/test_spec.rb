@@ -3,7 +3,7 @@ require_relative '../lib/board'
 describe Board do
   let(:board) { Board.new }
   describe 'update' do
-    it 'update the move' do
+    it 'update the move of player1' do
       expect(board.update(2, 'X')).to eql('X')
     end
   end
